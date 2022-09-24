@@ -1,0 +1,44 @@
+{
+  "kind": "collectionType",
+  "collectionName": "voters",
+  "info": {
+    "singularName": "voter",
+    "pluralName": "voters",
+    "displayName": "Voter",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Name": {
+      "type": "string",
+      "required": true
+    },
+    "Phone": {
+      "type": "integer"
+    },
+    "Email": {
+      "type": "email",
+      "required": true,
+      "unique": true
+    },
+    "Fingerprint": {
+      "type": "richtext"
+    },
+    "Birth": {
+      "type": "date"
+    },
+    "Password": {
+      "type": "password",
+      "required": true
+    },
+    "voting": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::voting.voting",
+      "inversedBy": "voters"
+    }
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "kind": "collectionType",
+  "collectionName": "data_calons",
+  "info": {
+    "singularName": "data-calon",
+    "pluralName": "data-calons",
+    "displayName": "Data Calon",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Nama": {
+      "type": "string"
+    },
+    "Deskripsi": {
+      "type": "text"
+    },
+    "Jumlah_vote": {
+      "type": "integer"
+    },
+    "File": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "Foto": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "voting": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::voting.voting",
+      "inversedBy": "calon"
+    }
+  }
+}

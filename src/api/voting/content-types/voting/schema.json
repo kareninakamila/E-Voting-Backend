@@ -4,7 +4,8 @@
   "info": {
     "singularName": "voting",
     "pluralName": "votings",
-    "displayName": "Voting"
+    "displayName": "Voting",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -25,14 +26,15 @@
       "required": true
     },
     "photo": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
     },
     "voters": {
       "type": "relation",
@@ -45,6 +47,9 @@
       "relation": "oneToMany",
       "target": "api::data-calon.data-calon",
       "mappedBy": "voting"
+    },
+    "Nama": {
+      "type": "text"
     }
   }
 }

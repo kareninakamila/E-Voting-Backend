@@ -52,5 +52,5 @@ jobs:
         with:
           app-name: 'EVoting'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_4F17CC30946B4161858AE81FBEA0F440 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_A7438A8CEAAF46B3AC0C33FE01AE26D6 }}
           package: .

@@ -9,6 +9,7 @@
     "build": "strapi build",
     "strapi": "strapi"
   },
+  "start": "NODE_ENV=production node server.js",
   "devDependencies": {},
   "dependencies": {
     "@strapi/plugin-i18n": "4.3.9",

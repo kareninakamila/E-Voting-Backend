@@ -1,4 +1,4 @@
-FROM node:14-alpine
+FROM node:12-alpine
 
 ENV PORT 1337
 ENV HOST 0.0.0.0

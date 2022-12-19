@@ -14,15 +14,16 @@
   "attributes": {
     "admin": {
       "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::voter.voter"
+      "relation": "manyToOne",
+      "target": "api::voter.voter",
+      "inversedBy": "created_Votings"
     },
     "started_date": {
       "required": true,
-      "type": "datetime"
+      "type": "date"
     },
     "finished_date": {
-      "type": "datetime",
+      "type": "date",
       "required": true
     },
     "photo": {
@@ -36,12 +37,6 @@
         "audios"
       ]
     },
-    "voters": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::voter.voter",
-      "mappedBy": "voting"
-    },
     "calon": {
       "type": "relation",
       "relation": "oneToMany",
@@ -50,6 +45,18 @@
     },
     "Nama": {
       "type": "text"
+    },
+    "voters": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::voter.voter",
+      "mappedBy": "votings"
+    },
+    "already_voters": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::voter.voter",
+      "inversedBy": "already_votings"
     }
   }
 }

@@ -24,21 +24,34 @@
       "required": true,
       "unique": true
     },
-    "Fingerprint": {
-      "type": "richtext"
-    },
     "Birth": {
       "type": "date"
     },
-    "Password": {
-      "type": "password",
-      "required": true
-    },
-    "voting": {
+    "votings": {
       "type": "relation",
-      "relation": "manyToOne",
+      "relation": "manyToMany",
       "target": "api::voting.voting",
       "inversedBy": "voters"
+    },
+    "Password": {
+      "type": "string",
+      "required": true
+    },
+    "Address": {
+      "type": "string",
+      "maxLength": 25
+    },
+    "created_Votings": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::voting.voting",
+      "mappedBy": "admin"
+    },
+    "already_votings": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::voting.voting",
+      "inversedBy": "already_voters"
     }
   }
 }
